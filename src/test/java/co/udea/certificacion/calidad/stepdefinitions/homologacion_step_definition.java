@@ -100,9 +100,10 @@ public class homologacion_step_definition {
         usuario.should(seeThat(ValidarVerSolicitudes.PaginaVerSolicitudes(),equalTo(true)));
     }
 
-    @Then("puedo ver la tabla en Ver Solicitudes")
-    public void verSolicitud(){
-        usuario.should(seeThat(ValidarVerSolicitudes.PaginaVerSolicitudes(),equalTo(true)));
+    @Then("Puedo regresar a la pantalla de login")
+    public void volverAlLogin(){
+        usuario.attemptsTo(volverAlLogin.paginaLogin(new loginPage()));
+        usuario.should(seeThat(ValidarLogin.paginaLogin(),equalTo(true)));
     }
 
 }
