@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SonarLintProjectSettings">
+    <option name="fileExclusions">
+      <list>
+        <option value="FILE:target/site/serenity/982377d01c3fa69ec657efe4ce5e0dda05b415e5ebb1f4d15dda046df7348991_screenshots.html" />
+        <option value="FILE:target/site/serenity/982377d01c3fa69ec657efe4ce5e0dda05b415e5ebb1f4d15dda046df7348991.html" />
+      </list>
+    </option>
+  </component>
+</project>
