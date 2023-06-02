@@ -14,8 +14,8 @@ public class rellenarFormulario implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Enter.theValue("123").into(INPUTCODIGO));
-        actor.attemptsTo(Enter.theValue("Física de campos").into(INPUTMATERIA));
-        actor.attemptsTo(Enter.theValue("Ingeniería de sistemas").into(INPUTPROGRAMA));
+        actor.attemptsTo(Enter.theValue("Fisica de campos").into(INPUTMATERIA));
+        actor.attemptsTo(Enter.theValue("Ingenieria de sistemas").into(INPUTPROGRAMA));
         actor.attemptsTo(Enter.theValue("20232").into(INPUTPERIODO));
         actor.attemptsTo(Enter.theValue("3").into(INPUTCALIFICACION));
         actor.attemptsTo(Enter.theValue("un comentario").into(INPUTCOMENTARIO));

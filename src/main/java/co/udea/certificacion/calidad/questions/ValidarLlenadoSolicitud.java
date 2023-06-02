@@ -11,7 +11,7 @@ public class ValidarLlenadoSolicitud implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         String stringTemporal = Text.of(CAMPOTABLA).viewedBy(actor).asString();
-        return(stringTemporal.contains("Física de campos"));
+        return(stringTemporal.contains("Fisica de campos"));
     }
 
     public static ValidarLlenadoSolicitud tablaSolicitudes() {

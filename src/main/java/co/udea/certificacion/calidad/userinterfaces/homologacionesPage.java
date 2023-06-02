@@ -16,5 +16,5 @@ public class homologacionesPage extends PageObject {
     public static final Target INPUTCOMENTARIO = Target.the("Input de comentario").located(By.name("comentario"));
     public static final Target BOTONAGREGAR = Target.the("Boton agregar").located(By.name("agregar"));
     public static final Target CAMPOTABLA = Target.the("Campo materia de la tabla").locatedBy("/html/body/div/div/div/table/tbody/tr/td[2]");
-
+    public static final Target NODATOS = Target.the("campo de no datos").locatedBy("/html/body/div/div/div/table/tbody/td");
 }
