@@ -1,16 +1,10 @@
 package co.udea.certificacion.calidad.stepdefinitions;
 
-import co.udea.certificacion.calidad.questions.ValidarHomologaciones;
-import co.udea.certificacion.calidad.questions.ValidarLlenadoSolicitud;
-import co.udea.certificacion.calidad.questions.ValidarLlenadoSolicitudIncorrecto;
-import co.udea.certificacion.calidad.questions.ValidarSolicitudes;
-import co.udea.certificacion.calidad.tasks.AbrirHomologaciones;
-import co.udea.certificacion.calidad.tasks.llenarFormulario;
-import co.udea.certificacion.calidad.tasks.llenarFormularioIncorrecto;
+import co.udea.certificacion.calidad.questions.*;
+import co.udea.certificacion.calidad.tasks.*;
 import co.udea.certificacion.calidad.userinterfaces.homologacionesPage;
 import co.udea.certificacion.calidad.userinterfaces.loginPage;
 import co.udea.certificacion.calidad.userinterfaces.tablaPage;
-import co.udea.certificacion.calidad.userinterfaces.verSolicitudesPage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -22,7 +16,6 @@ import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import co.udea.certificacion.calidad.tasks.eliminarSolicitud;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -99,5 +92,18 @@ public class homologacion_step_definition {
         usuario.attemptsTo(eliminarSolicitud.Eliminar(new tablaPage()));
         driver.switchTo().alert().accept();
     }
+
+
+    @Then("puedo ver el apartado Ver Solicitudes")
+    public void ingresarAVerSolicitudes(){
+        usuario.attemptsTo(AbrirVerSolicitudes.PaginaVerSolicitudes(new tablaPage()));
+        usuario.should(seeThat(ValidarVerSolicitudes.PaginaVerSolicitudes(),equalTo(true)));
+    }
+
+    @Then("puedo ver la tabla en Ver Solicitudes")
+    public void verSolicitud(){
+        usuario.should(seeThat(ValidarVerSolicitudes.PaginaVerSolicitudes(),equalTo(true)));
+    }
+
 }
 
