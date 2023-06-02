@@ -3,19 +3,19 @@ package co.udea.certificacion.calidad.questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-import static co.udea.certificacion.calidad.userinterfaces.resultadosPage.TEXTORESULTADOS;
+import static co.udea.certificacion.calidad.userinterfaces.homologacionesPage.TEXTORESULTADOS;
 
-public class ValidarTasasYTarifas implements Question<Boolean> {
+public class ValidarSolicitudes implements Question<Boolean> {
 
-    private static final String textoAValidarResultados = "Te ofrecemos estas";
+    private static final String textoAValidarResultados = "Materia por reconocer";
     @Override
     public Boolean answeredBy(Actor actor) {
         String stringTemporal = Text.of(TEXTORESULTADOS).viewedBy(actor).asString();
        return stringTemporal.contains(textoAValidarResultados);
     }
 
-    public static ValidarTasasYTarifas paginaResultados() {
-        return new ValidarTasasYTarifas();
+    public static ValidarSolicitudes paginaResultados() {
+        return new ValidarSolicitudes();
     }
 
 }

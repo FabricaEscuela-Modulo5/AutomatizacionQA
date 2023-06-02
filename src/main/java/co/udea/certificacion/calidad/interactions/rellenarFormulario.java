@@ -8,8 +8,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 
 import java.util.Random;
 
-import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONCONTINUAR;
-import static co.udea.certificacion.calidad.userinterfaces.simuladorPage.*;
+import static co.udea.certificacion.calidad.userinterfaces.loginPage.BOTONCONTINUAR;
+import static co.udea.certificacion.calidad.userinterfaces.verSolicitudesPage.*;
 
 public class rellenarFormulario implements Interaction {
 

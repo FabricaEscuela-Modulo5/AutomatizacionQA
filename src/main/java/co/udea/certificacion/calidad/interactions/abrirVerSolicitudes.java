@@ -5,16 +5,16 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONSIMULAR;
+import static co.udea.certificacion.calidad.userinterfaces.loginPage.BOTONSIMULAR;
 
-public class abrirSimulacion implements Interaction {
+public class abrirVerSolicitudes implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(BOTONSIMULAR));
 
     }
 
-    public static abrirSimulacion presionarSimular() {
-        return Tasks.instrumented(abrirSimulacion.class);
+    public static abrirVerSolicitudes presionarSimular() {
+        return Tasks.instrumented(abrirVerSolicitudes.class);
     }
 }

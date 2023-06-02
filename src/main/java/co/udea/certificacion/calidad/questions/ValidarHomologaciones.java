@@ -4,16 +4,17 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
-import static co.udea.certificacion.calidad.userinterfaces.personasPage.BOTONCONTINUAR;
+import static co.udea.certificacion.calidad.userinterfaces.loginPage.BOTONCONTINUAR;
+import static co.udea.certificacion.calidad.userinterfaces.loginPage.TEXTOHOMOLOGACIONES;
 
 
 public class ValidarHomologaciones implements Question<Boolean> {
 
-    private static final String TEXTOAVALIDARSIMULADOR = "CONTINUAR";
+    private static final String TEXTOAVALIDARSIMULADOR = "SOLICITUD DE RECONOCIMIENTO";
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String stringTemporal = Text.of(BOTONCONTINUAR).viewedBy(actor).asString();
+        String stringTemporal = Text.of(TEXTOHOMOLOGACIONES).viewedBy(actor).asString();
         return(stringTemporal.contains(TEXTOAVALIDARSIMULADOR));
     }
 

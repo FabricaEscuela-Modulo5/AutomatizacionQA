@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.udea.certificacion.calidad.userinterfaces.simuladorPage.BOTONSIMULADOR;
+import static co.udea.certificacion.calidad.userinterfaces.verSolicitudesPage.BOTONSIMULADOR;
 
 public class llenarFormulario implements Task {
     @Override
