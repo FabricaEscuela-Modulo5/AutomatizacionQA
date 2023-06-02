@@ -83,7 +83,7 @@ public class homologacion_step_definition {
 
     @Then("no puedo ver la solicitud en la tabla")
     public void noVeoLaTablaSolicitud(){
-        usuario.should(there(ValidarLlenadoSolicitud.tablaSolicitudes(),equalTo(false)));
+        usuario.should(seeThat(ValidarLlenadoSolicitud.tablaSolicitudes(),equalTo(false)));
     }
 }
 
