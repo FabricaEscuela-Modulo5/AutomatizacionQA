@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
 import static co.udea.certificacion.calidad.userinterfaces.loginPage.BOTONCONTINUAR;
-import static co.udea.certificacion.calidad.userinterfaces.loginPage.TEXTOHOMOLOGACIONES;
+import static co.udea.certificacion.calidad.userinterfaces.homologacionesPage.TEXTOHOMOLOGACIONES;
 
 
 public class ValidarHomologaciones implements Question<Boolean> {

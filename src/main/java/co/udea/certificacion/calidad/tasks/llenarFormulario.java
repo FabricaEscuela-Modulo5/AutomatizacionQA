@@ -7,16 +7,18 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static co.udea.certificacion.calidad.userinterfaces.verSolicitudesPage.BOTONSIMULADOR;
+import static co.udea.certificacion.calidad.userinterfaces.homologacionesPage.BOTONAGREGAR;
+
 
 public class llenarFormulario implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(rellenarFormulario.escribirCampos());
-        actor.attemptsTo(Click.on(BOTONSIMULADOR));
+        actor.attemptsTo(Click.on(BOTONAGREGAR));
     }
 
     public static llenarFormulario Simulacion(PageObject page){
         return Tasks.instrumented(llenarFormulario.class,page);
     }
+
 }

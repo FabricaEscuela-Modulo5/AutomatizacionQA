@@ -5,11 +5,6 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class verSolicitudesPage extends PageObject {
-
-
-
-    public static final Target BOTONRADIALSI = Target.the("Boton radial de si sabe cuanto dinero necesita").located(By.id("opcion-si"));
-    public static final Target INPUTMONTO = Target.the("Input de monto a prestar").located(By.id("valor-simulacion"));
     public static final Target INPUTMESES = Target.the("Input de meses de plazo").located(By.id("valor-plazo"));
     public static final Target INPUTFECHA = Target.the("Input de fecha de nacimiento").located(By.id("campo-fecha"));
 

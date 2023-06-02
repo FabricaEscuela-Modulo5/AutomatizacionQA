@@ -1,9 +1,12 @@
 package co.udea.certificacion.calidad.stepdefinitions;
 
 import co.udea.certificacion.calidad.questions.ValidarHomologaciones;
+import co.udea.certificacion.calidad.questions.ValidarLlenadoSolicitud;
 import co.udea.certificacion.calidad.questions.ValidarSolicitudes;
 import co.udea.certificacion.calidad.tasks.AbrirHomologaciones;
 import co.udea.certificacion.calidad.tasks.llenarFormulario;
+import co.udea.certificacion.calidad.tasks.llenarFormularioIncorrecto;
+import co.udea.certificacion.calidad.userinterfaces.homologacionesPage;
 import co.udea.certificacion.calidad.userinterfaces.loginPage;
 import co.udea.certificacion.calidad.userinterfaces.verSolicitudesPage;
 import cucumber.api.java.After;
@@ -32,7 +35,7 @@ public class homologacion_step_definition {
     @Before
     public void preStage() {
         System.setProperty("webdriver.edge.driver",
-                "src/test/resources/driver/msedgedriver.exe");
+                "src/test/resources/driver/msedgedriver");
 
         driver = new EdgeDriver();
         driver.manage().window().maximize();
@@ -65,13 +68,22 @@ public class homologacion_step_definition {
 
     @When("ingrese satisfactoriamente los campos del formulario")
     public void relleneElFormulario(){
-        usuario.attemptsTo(llenarFormulario.Simulacion(new verSolicitudesPage()));
+        usuario.attemptsTo(llenarFormulario.Simulacion(new homologacionesPage()));
     }
 
-    @Then("puedo ver las tasas y tarifas del credito")
-    public void leDoyAlBotonSiDeCuantoDineroNecesito(){
-        usuario.should(seeThat(ValidarSolicitudes.paginaResultados(),equalTo(true)));
+    @Then("puedo ver la solicitud en la tabla")
+    public void puedoVerSolicitudTabla(){
+        usuario.should(seeThat(ValidarLlenadoSolicitud.tablaSolicitudes(),equalTo(true)));
     }
 
+    @When("ingrese incorrectamente los campos del formulario")
+    public void ingresoIncorrectamenteFormulario(){
+        usuario.attemptsTo(llenarFormularioIncorrecto.Simulacion(new homologacionesPage()));
+    }
+
+    @Then("no puedo ver la solicitud en la tabla")
+    public void noVeoLaTablaSolicitud(){
+        usuario.should(there(ValidarLlenadoSolicitud.tablaSolicitudes(),equalTo(false)));
+    }
 }
 
