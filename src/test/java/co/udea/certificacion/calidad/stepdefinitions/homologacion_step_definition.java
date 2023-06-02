@@ -19,9 +19,12 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import co.udea.certificacion.calidad.tasks.eliminarSolicitud;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -33,14 +36,16 @@ public class homologacion_step_definition {
 
     @Managed(driver = "edge")
     public WebDriver driver;
+
     private Actor usuario = Actor.named("Juan");
 
     @Before
     public void preStage() {
         System.setProperty("webdriver.edge.driver",
                 "src/test/resources/driver/msedgedriver.exe");
-
-        driver = new EdgeDriver();
+        DesiredCapabilities dc = new DesiredCapabilities();
+        dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+        driver = new EdgeDriver(dc);
         driver.manage().window().maximize();
         usuario.can(BrowseTheWeb.with(driver));
     }

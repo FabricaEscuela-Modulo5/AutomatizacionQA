@@ -27,4 +27,4 @@ Feature: Ingresar al modulo de homologaciones y cambios de version
     When ingrese satisfactoriamente los campos del formulario
     Then puedo ver la solicitud en la tabla
     Then Puedo eliminar la solicitud de homologacion
-    #Then no puedo ver la solicitud en la tabla
+    Then no puedo ver la solicitud en la tabla

@@ -14,7 +14,7 @@ public class botonEliminar  implements Interaction
         actor.attemptsTo(Click.on(ELIMINARSOLICITUD));
     }
 
-    public static abrirVerSolicitudes presionarEliminar() {
-        return Tasks.instrumented(abrirVerSolicitudes.class);
+    public static botonEliminar presionarEliminar() {
+        return Tasks.instrumented(botonEliminar.class);
     }
 }
