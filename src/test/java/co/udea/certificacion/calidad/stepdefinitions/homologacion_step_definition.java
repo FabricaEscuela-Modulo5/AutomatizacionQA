@@ -35,7 +35,7 @@ public class homologacion_step_definition {
     @Before
     public void preStage() {
         System.setProperty("webdriver.edge.driver",
-                "src/test/resources/driver/msedgedriver.exe");
+                "src/test/resources/driver/msedgedriver");
         DesiredCapabilities dc = new DesiredCapabilities();
         dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
         driver = new EdgeDriver(dc);
