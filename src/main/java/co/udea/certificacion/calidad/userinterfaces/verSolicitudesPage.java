@@ -6,5 +6,4 @@ import org.openqa.selenium.By;
 
 public class verSolicitudesPage extends PageObject {
     public static final Target TEXTOVERSOLICITUDES  = Target.the("TEXTOVERSOLICITUDES").locatedBy("//*[@id=\"root\"]/div/div/table/thead/tr/th[1]");
-
 }
